@@ -47,6 +47,13 @@ class Vet
     sql = "DELETE FROM vets WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
-  end 
+  end
+
+  def find(id)
+    sql = "SELECT * FROM vets WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Vet.new(results.first)
+  end
 
 end

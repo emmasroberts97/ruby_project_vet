@@ -1,0 +1,38 @@
+<form class="create" action="/pets/<%= @pet.id %>" method="post">
+
+  <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value= "<%= @pet.name %>"/>
+
+
+    <label for="dob">Date of Birth:</label>
+    <input id="dob" type="text" name="dob" value= "<%= @pet.dob %>" />
+
+
+    <label for="species">Select a species:</label>
+    <select id="species" name="species">
+      <option value="Dog">Dog</option>
+      <option value="Cat">Cat</option>
+      <option value="Bird">Bird</option>
+      <option value="Rodent">Rodent</option>
+    </select>
+
+    <label for="owner_details">Select an owner:</label>
+    <select id="owner_details" name="owner_details">
+      <% for owner in @owners %>
+      <option value = <%= owner.id %> > <%= owner.name %> </option>
+      <% end %>
+    </select>
+
+    <label for="vet_details">Select a vet:</label>
+    <select id="vet_details" name="vet_details">
+      <% for vet in @vets %>
+      <option value = <%= vet.id %> > <%= vet.name %> </option>
+      <% end %>
+    </select>
+
+    <label for="treatment_notes">Treatment Notes:</label>
+    <input id="treatment_notes" type="text" name="treatment_notes" value= "<%= @pet.treatment_notes %>">
+
+    <input class="submit-button" type='submit' value="Update Pet"/>
+
+</form>
