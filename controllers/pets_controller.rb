@@ -38,7 +38,7 @@ end
 
 post '/pets/:id' do
   @pet = Pet.new(params)
-  @pet.update()
+  @pet.update_pet()
   redirect to('/pets')
 end
 

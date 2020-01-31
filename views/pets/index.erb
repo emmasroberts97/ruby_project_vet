@@ -2,7 +2,7 @@
 
 <% for pet in @pets %>
 <p> Name: <%= pet.name %> </p>
-<p> Date of Birth: <%= pet.dob %> </p>
+<p> Vet: <%= pet.find_vet().name %> </p>
 <p> Species: <%= pet.species %> </p>
 <hr />
 <% end %>

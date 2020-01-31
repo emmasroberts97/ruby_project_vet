@@ -1,32 +1,32 @@
 <form class="create" action="/pets/<%= @pet.id %>" method="post">
 
   <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value= "<%= @pet.name %>"/>
+    <input id="name" type="text" name="name" value= "<%= @pet.name %>" disabled/>
 
 
     <label for="dob">Date of Birth:</label>
-    <input id="dob" type="text" name="dob" value= "<%= @pet.dob %>" />
+    <input id="dob" type="text" name="dob" value= "<%= @pet.dob %>" disabled/>
 
 
     <label for="species">Select a species:</label>
-    <select id="species" name="species">
-      <option value="Dog">Dog</option>
-      <option value="Cat">Cat</option>
-      <option value="Bird">Bird</option>
-      <option value="Rodent">Rodent</option>
+    <select id="species" name="species" disabled>
+      <option <%= "selected" if @pet.species == "Dog" %> value="Dog">Dog</option>
+      <option <%= "selected" if @pet.species == "Cat" %> value="Cat">Cat</option>
+      <option <%= "selected" if @pet.species == "Bird" %> value="Bird">Bird</option>
+      <option <%= "selected" if @pet.species == "Rodent" %> value="Rodent">Rodent</option>
     </select>
 
     <label for="owner_details">Select an owner:</label>
     <select id="owner_details" name="owner_details">
       <% for owner in @owners %>
-      <option value = <%= owner.id %> > <%= owner.name %> </option>
+      <option <%= "selected" if @pet.owner_details == owner.id %> value = <%= owner.id %> > <%= owner.name %> </option>
       <% end %>
     </select>
 
     <label for="vet_details">Select a vet:</label>
     <select id="vet_details" name="vet_details">
       <% for vet in @vets %>
-      <option value = <%= vet.id %> > <%= vet.name %> </option>
+      <option <%= "selected" if @pet.vet_details == vet.id %> value = <%= vet.id %> > <%= vet.name %> </option>
       <% end %>
     </select>
 
