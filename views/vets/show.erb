@@ -1,0 +1,19 @@
+<h2> <%= @vet.name %> </h2>
+
+<h2> <%= @vet.experience %> years of experience </h2>
+
+<h2> Pets:
+  <ul>
+    <% for pet in @vet.find_patients %>
+    <li> <%= pet.name %> </li>
+   <% end %>
+   </ul>
+   </h2>
+
+<form method="post" action="/vets/<%= @vet.id %>/delete">
+  <input type="submit" value="Delete Vet"/>
+</form>
+
+<form method="get" action="/vets/<%= @vet.id %>/edit">
+  <input type="submit" value="Edit Vet" />
+</form>

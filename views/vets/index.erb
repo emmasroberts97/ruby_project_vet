@@ -2,21 +2,9 @@
 
 <% for vet in @vets %>
 <p> Name: <%= vet.name %> </p>
-<p> Experience: <%= vet.experience %> years </p>
-<p> Pets:
-  <ul>
-    <% for pet in vet.find_patients %>
-    <li> <%= pet.name %> </li>
-   <% end %>
-   </ul>
-   </p>
 
-   <form method="post" action="/vets/<%= vet.id %>/delete">
-     <input type="submit" value="Delete Vet"/>
-   </form>
-
-   <form method="get" action="/vets/<%= vet.id %>/edit">
-     <input type="submit" value="Edit Vet" />
+   <form method="get" action="/vets/<%= vet.id %>">
+     <input type="submit" value="Select Vet"/>
    </form>
  <br>
  <hr />

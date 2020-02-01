@@ -21,10 +21,10 @@ post '/vets' do
   redirect to('/vets')
 end
 
-# get '/vets/:id' do
-#   @vet = Vet.find(params[:id])
-#   erb(:"vets/show")
-# end
+get '/vets/:id' do
+  @vet = Vet.find(params[:id])
+  erb(:"vets/show")
+end
 
 get '/vets/:id/edit' do
   @vet = Vet.find(params[:id])
