@@ -28,8 +28,9 @@ class Vet
   def find_patients()
     sql = "SELECT * FROM pets WHERE pets.vet_details = $1"
     values = [@id]
-    results = SqlRunner.run(sql, values)
-    return Pet.new(results.first)
+    result = SqlRunner.run(sql, values)
+    pets_data = result.map{|pet| Pet.new(pet)}
+    return pets_data
   end
 
   def update_details()
@@ -49,7 +50,7 @@ class Vet
     SqlRunner.run(sql, values)
   end
 
-  def find(id)
+  def self.find(id)
     sql = "SELECT * FROM vets WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)

@@ -46,9 +46,17 @@ class Owner
   def find_pets()
     sql = "SELECT * FROM pets WHERE pets.owner_details = $1"
     values = [@id]
+    result = SqlRunner.run(sql, values)
+    pets_data = result.map{|pet| Pet.new(pet)}
+    return pets_data
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [id]
     results = SqlRunner.run(sql, values)
-    return Pet.new(results.first)
-  end 
+    return Owner.new(results.first)
+  end
 
 
 end

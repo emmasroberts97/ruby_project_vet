@@ -1,0 +1,12 @@
+<form class="create" action="/owners/<%= @owner.id %>" method="post">
+
+  <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value = "<%= @owner.name %>" />
+
+
+    <label for="contact_number">Contact Number:</label>
+    <input id="contact_number" type="contact_number" name="contact_number" value = "<%= @owner.contact_number %>" />
+
+    <input class="submit-button" type='submit' value="Update Owner"/>
+
+</form>

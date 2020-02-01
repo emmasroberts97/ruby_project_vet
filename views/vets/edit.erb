@@ -1,0 +1,12 @@
+<form class="create" action="/vets/<%= @vet.id %>" method="post">
+
+  <label for="name">Name:</label>
+    <input id="name" type="text" name="name" value = "<%= @vet.name %>" />
+
+
+    <label for="experience">Years of Experience:</label>
+    <input id="experience" type="experience" name="experience" value = "<%= @vet.experience %>" />
+
+    <input class="submit-button" type='submit' value="Update Vet"/>
+
+</form>

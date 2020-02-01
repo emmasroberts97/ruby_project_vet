@@ -1,15 +1,15 @@
 <form class="create" action="/pets/<%= @pet.id %>" method="post">
 
   <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value= "<%= @pet.name %>" disabled/>
+    <input id="name" type="text" name="name" value= "<%= @pet.name %>" />
 
 
     <label for="dob">Date of Birth:</label>
-    <input id="dob" type="text" name="dob" value= "<%= @pet.dob %>" disabled/>
+    <input id="dob" type="text" name="dob" value= "<%= @pet.dob %>" />
 
 
     <label for="species">Select a species:</label>
-    <select id="species" name="species" disabled>
+    <select id="species" name="species" >
       <option <%= "selected" if @pet.species == "Dog" %> value="Dog">Dog</option>
       <option <%= "selected" if @pet.species == "Cat" %> value="Cat">Cat</option>
       <option <%= "selected" if @pet.species == "Bird" %> value="Bird">Bird</option>

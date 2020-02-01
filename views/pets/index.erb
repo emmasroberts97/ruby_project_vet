@@ -4,5 +4,11 @@
 <p> Name: <%= pet.name %> </p>
 <p> Vet: <%= pet.find_vet().name %> </p>
 <p> Species: <%= pet.species %> </p>
+
+<form method="get" action="/pets/<%= pet.id %>">
+  <input type="submit" value="Select Pet"/>
+</form>
+
 <hr />
+
 <% end %>
