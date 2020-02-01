@@ -1,5 +1,6 @@
 <h2> Name: <%= @owner.name %> </h2>
 <h2> Contact Number: <%= @owner.contact_number %> </h2>
+<h2> Registration Status: <%= @owner.registration %> </h2>
 
 <form method="post" action="/owners/<%= @owner.id %>/delete">
   <input type="submit" value="Delete Owner"/>

@@ -3,6 +3,7 @@
 <% for owner in @owners %>
 <p> Name: <%= owner.name %> </p>
 <p> Contact Number: <%= owner.contact_number %> </p>
+<p> Registration Status: <%= owner.registration %> </p>
 <p> Pet(s): </p>
 <ul>
  <% for pet in owner.find_pets %>

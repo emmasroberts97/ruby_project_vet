@@ -7,6 +7,12 @@
     <label for="contact_number">Contact Number:</label>
     <input id="contact_number" type="contact_number" name="contact_number" value = "<%= @owner.contact_number %>" />
 
+    <label for="registration">Registration Status:</label>
+    <select id="registration" name="registration">
+      <option <%= "selected" if @owner.registration == "Registered" %> value = "Registered" > Registered </option>
+      <option <%= "selected" if @owner.registration == "Not Registered" %> value = "Not Registered" > Not Registered </option>
+    </select>
+
     <input class="submit-button" type='submit' value="Update Owner"/>
 
 </form>

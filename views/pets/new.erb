@@ -19,7 +19,9 @@
     <label for="owner_details">Select an owner:</label>
     <select id="owner_details" name="owner_details">
       <% for owner in @owners %>
-      <option value = <%= owner.id %> > <%= owner.name %> </option>
+       <% if owner.registration != "Not Registered" %>
+        <option value = <%= owner.id %> > <%= owner.name %> </option>
+       <% end %>
       <% end %>
     </select>
 

@@ -11,7 +11,8 @@ CREATE TABLE vets(
 CREATE TABLE owners(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  contact_number VARCHAR(255)
+  contact_number VARCHAR(255),
+  registration VARCHAR(255)
 );
 
 CREATE TABLE pets(
