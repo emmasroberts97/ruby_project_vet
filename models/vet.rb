@@ -2,19 +2,20 @@ require_relative('../db/sqlrunner.rb')
 
 class Vet
 
-  attr_accessor :name, :experience
+  attr_accessor :name, :experience, :url
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @experience = options['experience'].to_i
+    @url = options['url']
   end
 
   def save()
-    sql = "INSERT INTO vets (name, experience)
-           VALUES ($1, $2) RETURNING id"
-    values = [@name, @experience]
+    sql = "INSERT INTO vets (name, experience, url)
+           VALUES ($1, $2, $3) RETURNING id"
+    values = [@name, @experience, @url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -34,8 +35,8 @@ class Vet
   end
 
   def update_details()
-    sql = "UPDATE vets SET (name, experience) = ($1, $2) WHERE id = $3"
-    values = [@name, @experience, @id]
+    sql = "UPDATE vets SET (name, experience, url) = ($1, $2, $3) WHERE id = $4"
+    values = [@name, @experience, @url, @id]
     SqlRunner.run(sql, values)
   end
 

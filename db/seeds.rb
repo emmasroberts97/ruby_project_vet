@@ -8,16 +8,16 @@ Vet.delete_all()
 Owner.delete_all()
 Pet.delete_all()
 
-owner1 = Owner.new({"name" => "Emma","contact_number" => "12345678910","registration" => "Registered"})
-owner2 = Owner.new({"name" => "Gayle","contact_number" => "10987654321","registration" => "Registered"})
-owner3 = Owner.new({"name" => "Scott","contact_number" => "5432154321","registration" => "Not Registered"})
+owner1 = Owner.new({"name" => "Emma","contact_number" => "12345678910","registration" => "Registered","url" => "/images/owners/Emma.png"})
+owner2 = Owner.new({"name" => "Gayle","contact_number" => "10987654321","registration" => "Registered", "url" => "/images/owners/Gayle.jpeg"})
+owner3 = Owner.new({"name" => "Scott","contact_number" => "5432154321","registration" => "Not Registered", "url" => "/images/owners/Scott.png"})
 owner1.save()
 owner2.save()
 owner3.save()
 
-vet1 = Vet.new({"name" => "Dr. Rooney","experience" => 5})
-vet2 = Vet.new({"name" => "Dr. Smith","experience" => 3})
-vet3 = Vet.new({"name" => "Dr. Jones","experience" => 7})
+vet1 = Vet.new({"name" => "Dr. Rooney","experience" => 5,"url" => "/images/vets/Rooney.jpeg"})
+vet2 = Vet.new({"name" => "Dr. Smith","experience" => 3,"url" => "/images/vets/Smith.png"})
+vet3 = Vet.new({"name" => "Dr. Jones","experience" => 7,"url" => "/images/vets/Jones.jpeg"})
 vet1.save()
 vet2.save()
 vet3.save()
@@ -29,7 +29,8 @@ pet1 = Pet.new(
     "species" => "Dog",
     "owner_details" => owner1.id,
     "vet_details" => vet1.id,
-    "treatment_notes" => "Good boy!"
+    "treatment_notes" => "Good boy!",
+    "url" => "/images/pets/Ollie.jpeg"
   }
 )
 
@@ -40,7 +41,8 @@ pet2 = Pet.new(
     "species" => "Dog",
     "owner_details" => owner1.id,
     "vet_details" => vet1.id,
-    "treatment_notes" => "No treatment needed! She is healthy."
+    "treatment_notes" => "No treatment needed! She is healthy.",
+    "url" => "/images/pets/Tessa.png"
   }
 )
 
@@ -51,7 +53,8 @@ pet3 = Pet.new(
     "species" => "Cat",
     "owner_details" => owner2.id,
     "vet_details" => vet2.id,
-    "treatment_notes" => "Nails clipped and vaccinations given."
+    "treatment_notes" => "Nails clipped and vaccinations given.",
+    "url" => "/images/pets/Monkey.jpeg"
   }
 )
 
@@ -62,7 +65,8 @@ pet4 = Pet.new(
     "species" => "Cat",
     "owner_details" => owner2.id,
     "vet_details" => vet2.id,
-    "treatment_notes" => "Nails clipped and vaccinations given."
+    "treatment_notes" => "Nails clipped and vaccinations given.",
+    "url" => "/images/pets/Pepper.jpeg"
   }
 )
 
@@ -73,7 +77,8 @@ pet5 = Pet.new(
     "species" => "Dog",
     "owner_details" => owner3.id,
     "vet_details" => vet3.id,
-    "treatment_notes" => "Initial puppy vaccinations given."
+    "treatment_notes" => "Initial puppy vaccinations given.",
+    "url" => "/images/pets/Rodger.png"
   }
 )
 
@@ -84,7 +89,8 @@ pet6 = Pet.new(
     "species" => "Dog",
     "owner_details" => owner3.id,
     "vet_details" => vet3.id,
-    "treatment_notes" => "Initial puppy vaccinations given."
+    "treatment_notes" => "Initial puppy vaccinations given.",
+    "url" => "/images/pets/Lucy.jpeg"
   }
 )
 

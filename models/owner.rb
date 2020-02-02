@@ -3,19 +3,20 @@ require_relative('../db/sqlrunner.rb')
 class Owner
 
   attr_reader :id
-  attr_accessor :name, :contact_number, :registration
+  attr_accessor :name, :contact_number, :registration, :url
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @contact_number = options['contact_number']
     @registration = options['registration']
+    @url = options['url']
   end
 
   def save()
-    sql = "INSERT INTO owners (name, contact_number, registration)
-          VALUES ($1, $2, $3) RETURNING id"
-    values = [@name, @contact_number, @registration]
+    sql = "INSERT INTO owners (name, contact_number, registration, url)
+          VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@name, @contact_number, @registration, @url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -27,9 +28,9 @@ class Owner
   end
 
   def update_contact_details()
-    sql = "UPDATE owners SET (name, contact_number, registration) = ($1, $2, $3)
-          WHERE id = $4"
-    values = [@name, @contact_number, @registration, @id]
+    sql = "UPDATE owners SET (name, contact_number, registration, url) = ($1, $2, $3, $4)
+          WHERE id = $5"
+    values = [@name, @contact_number, @registration, @url, @id]
     SqlRunner.run(sql, values)
   end
 
