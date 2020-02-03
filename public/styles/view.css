@@ -1,0 +1,41 @@
+p.pets {
+  display: flex;
+  justify-content: center;
+}
+
+form.pets {
+  display: flex;
+  justify-content: center;
+}
+
+h2.pets {
+  display: flex;
+  justify-content: center;
+}
+
+
+form.vetbutton {
+  display: flex;
+  flex-direction: row;
+}
+
+li.vetpets {
+  padding-left: 500px;
+}
+
+img.pet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3.petdetails {
+  display: flex;
+  justify-content: center;
+}
+
+img.showowner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

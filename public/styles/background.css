@@ -1,0 +1,46 @@
+main.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main.text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+h2.viewpets {
+  padding-right: 500px;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+section.appointments{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul.practice{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 600px;
+}
+
+nav {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+h1.title {
+  display: flex;
+  justify-content: center;
+}

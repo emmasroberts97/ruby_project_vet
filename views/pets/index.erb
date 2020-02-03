@@ -1,14 +1,25 @@
-<h2> Our Pets </h2>
+<h2 class="pets"> Creature Comforts' Pets </h2>
+
+
+<form method="get" action="/pets/new">
+  <input type="submit" value="Add Pet"/>
+</form>
+
+<form method="get" action="/appointments/new">
+  <input type="submit" value="Add Appointment"/>
+</form>
+
 
 <% for pet in @pets %>
-<p> Name: <%= pet.name %> </p>
-<p> Vet: <%= pet.find_vet().name %> </p>
-<p> Species: <%= pet.species %> </p>
+<p class="pets"> Name: <%= pet.name %> </p>
+<p class="pets"> Vet: <%= pet.find_vet().name %> </p>
+<p class="pets"> Species: <%= pet.species %> </p>
 
-<form method="get" action="/pets/<%= pet.id %>">
+<form method="get" action="/pets/<%= pet.id %>" class="pets">
   <input type="submit" value="Select Pet"/>
 </form>
 
-<hr />
+
+
 
 <% end %>

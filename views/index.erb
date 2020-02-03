@@ -1,13 +1,34 @@
-<h1>Creature Comforts Veterinary Practice</h1>
+<h1 class="title">Creature Comforts Veterinary Practice</h1>
+
+<main class="text">
+  <h2 class="viewpets"> View Pets </h2>
+  <h2 class="viewvets"> View Vets </h2>
+</main>
 
 
 
-<h2> Pets in the Practce </h2>
+<main class="images">
+
+<a href="/pets"> <img src="images/pets.jpeg" alt="View Pets" height="200" width="200" /> </a>
+
+
+<img src="images/logo.png" alt="Creature Comforts Logo" height="300" width="300" />
+
+
+<a href="/vets"> <img src="images/vets.jpeg" alt="View Vets" height="200" width="200" /> </a>
+</main>
+
+
+<section class="appointments" >
+<h2> Pets in the Practice Today: </h2>
+</section>
+<ul class="practice">
 <% for appointment in @appointments %>
 <% time = Date.today %>
 <% check_out = appointment.check_out %>
 <% check_in = appointment.check_in %>
   <% if time.between?(Date.parse(check_in), Date.parse(check_out))  %>
-    <p> <%= appointment.find_pet.name %> </p>
+  <li> <%= appointment.find_pet.name %> </li>
   <% end %>
 <% end %>
+</ul>

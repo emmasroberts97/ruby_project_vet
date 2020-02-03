@@ -7,15 +7,15 @@
 <h2> Pets:
   <ul>
     <% for pet in @vet.find_patients %>
-    <li> <%= pet.name %> </li>
+    <li class="vetpets'"> <%= pet.name %> </li>
    <% end %>
    </ul>
    </h2>
 
-<form method="post" action="/vets/<%= @vet.id %>/delete">
+<form method="post" action="/vets/<%= @vet.id %>/delete" class="vetbutton">
   <input type="submit" value="Delete Vet"/>
 </form>
 
-<form method="get" action="/vets/<%= @vet.id %>/edit">
+<form method="get" action="/vets/<%= @vet.id %>/edit" class="vetbutton">
   <input type="submit" value="Edit Vet" />
 </form>
