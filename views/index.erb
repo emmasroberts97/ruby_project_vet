@@ -1,1 +1,13 @@
-<h1>Hi</h1>
+<h1>Creature Comforts Veterinary Practice</h1>
+
+
+
+<h2> Pets in the Practce </h2>
+<% for appointment in @appointments %>
+<% time = Date.today %>
+<% check_out = appointment.check_out %>
+<% check_in = appointment.check_in %>
+  <% if time.between?(Date.parse(check_in), Date.parse(check_out))  %>
+    <p> <%= appointment.find_pet.name %> </p>
+  <% end %>
+<% end %>

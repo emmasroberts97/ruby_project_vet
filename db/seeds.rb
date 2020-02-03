@@ -1,12 +1,15 @@
 require_relative('../models/owner.rb')
 require_relative('../models/pet.rb')
 require_relative('../models/vet.rb')
+require_relative('../models/appointment.rb')
+
 
 require('pry')
 
 Vet.delete_all()
 Owner.delete_all()
 Pet.delete_all()
+Appointment.delete_all()
 
 owner1 = Owner.new({"name" => "Emma","contact_number" => "12345678910","registration" => "Registered","url" => "/images/owners/Emma.png"})
 owner2 = Owner.new({"name" => "Gayle","contact_number" => "10987654321","registration" => "Registered", "url" => "/images/owners/Gayle.jpeg"})
@@ -25,7 +28,7 @@ vet3.save()
 pet1 = Pet.new(
   {
     "name" => "Ollie",
-    "dob" => "27/11/09",
+    "dob" => "2009/11/27",
     "species" => "Dog",
     "owner_details" => owner1.id,
     "vet_details" => vet1.id,
@@ -37,7 +40,7 @@ pet1 = Pet.new(
 pet2 = Pet.new(
   {
     "name" => "Tessa",
-    "dob" => "05/07/2004",
+    "dob" => "2004/07/05",
     "species" => "Dog",
     "owner_details" => owner1.id,
     "vet_details" => vet1.id,
@@ -49,7 +52,7 @@ pet2 = Pet.new(
 pet3 = Pet.new(
   {
     "name" => "Monkey",
-    "dob" => "01/01/11",
+    "dob" => "2011/01/01",
     "species" => "Cat",
     "owner_details" => owner2.id,
     "vet_details" => vet2.id,
@@ -61,7 +64,7 @@ pet3 = Pet.new(
 pet4 = Pet.new(
   {
     "name" => "Pepper",
-    "dob" => "01/01/12",
+    "dob" => "2012/01/01",
     "species" => "Cat",
     "owner_details" => owner2.id,
     "vet_details" => vet2.id,
@@ -73,7 +76,7 @@ pet4 = Pet.new(
 pet5 = Pet.new(
   {
     "name" => "Rodger",
-    "dob" => "01/01/19",
+    "dob" => "2019/01/01",
     "species" => "Dog",
     "owner_details" => owner3.id,
     "vet_details" => vet3.id,
@@ -85,7 +88,7 @@ pet5 = Pet.new(
 pet6 = Pet.new(
   {
     "name" => "Lucy",
-    "dob" => "01/01/19",
+    "dob" => "2019/01/01",
     "species" => "Dog",
     "owner_details" => owner3.id,
     "vet_details" => vet3.id,
@@ -100,6 +103,15 @@ pet3.save()
 pet4.save()
 pet5.save()
 pet6.save()
+
+
+appointment1 = Appointment.new({"check_in" => Time.new(2019, 12, 1),"check_out" => Time.new(2019, 12, 3),"pet_id" => pet1.id})
+appointment2 = Appointment.new({"check_in" => Time.new(2020, 2, 1), "check_out" => Time.new(2020, 2, 10), "pet_id" => pet3.id})
+appointment3 = Appointment.new({"check_in" => Time.new(2020, 2, 3), "check_out" => Time.new(2020, 2, 7), "pet_id" => pet6.id})
+
+appointment1.save()
+appointment2.save()
+appointment3.save()
 
 
 
