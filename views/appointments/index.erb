@@ -1,0 +1,16 @@
+<h2 class="appointments"> Appointments </h2>
+
+<table>
+  <tr>
+    <th>Check In</th>
+    <th>Check Out</th>
+    <th>Pet</th>
+  </tr>
+  <% for appointment in @appointments %>
+  <tr>
+    <td><%= Date.parse(appointment.check_in) %></td>
+    <td><%= Date.parse(appointment.check_out) %></td>
+    <td><%= appointment.find_pet.name %></td>
+  </tr>
+  <% end %>
+</table>

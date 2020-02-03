@@ -1,7 +1,7 @@
 <h2> Creature Comforts Veterinary Practice Vets </h2>
 
 <% for vet in @vets %>
-<p> Name: <%= vet.name %> </p>
+<h3 class="vet"> <%= vet.name %> </h3>
 
    <form method="get" action="/vets/<%= vet.id %>">
      <input type="submit" value="Select Vet"/>

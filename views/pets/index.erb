@@ -10,16 +10,19 @@
 </form>
 
 
-<% for pet in @pets %>
-<p class="pets"> Name: <%= pet.name %> </p>
-<p class="pets"> Vet: <%= pet.find_vet().name %> </p>
-<p class="pets"> Species: <%= pet.species %> </p>
-
-<form method="get" action="/pets/<%= pet.id %>" class="pets">
-  <input type="submit" value="Select Pet"/>
-</form>
-
-
-
-
-<% end %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Vet</th>
+    <th>Species</th>
+    <th>View Pet</th>
+  </tr>
+  <% for pet in @pets %>
+  <tr>
+    <td><%= pet.name %></td>
+    <td><%= pet.find_vet().name %></td>
+    <td><%= pet.species %></td>
+    <td><a href="/pets/<%= pet.id %>">View Pet</a></td>
+  </tr>
+  <% end %>
+</table>

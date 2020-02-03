@@ -1,19 +1,26 @@
-<h2> Registered Owners </h2>
+<h2> Owners </h2>
 
-<% for owner in @owners %>
-<p> Name: <%= owner.name %> </p>
-<p> Contact Number: <%= owner.contact_number %> </p>
-<p> Registration Status: <%= owner.registration %> </p>
-<p> Pet(s): </p>
-<ul>
- <% for pet in owner.find_pets %>
-  <li> <%= pet.name %> </li>
- <% end %>
- </ul>
-
- <form method="get" action="/owners/<%= owner.id %>">
-   <input type="submit" value="Select Owner"/>
- </form>
- <br>
- <hr />
-<% end %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Contact Number</th>
+    <th>Registration Status</th>
+    <th>Pet(s)</th>
+    <th>View Owner</th>
+  </tr>
+  <% for owner in @owners %>
+  <tr>
+    <td><%= owner.name %></td>
+    <td><%= owner.contact_number %></td>
+    <td><%= owner.registration %></td>
+    <td>
+      <ul>
+     <% for pet in owner.find_pets %>
+      <li> <%= pet.name %> </li>
+     <% end %>
+     </ul>
+   </td>
+    <td><a href="/owners/<%= owner.id %>">View Owner</a></td>
+  </tr>
+  <% end %>
+</table>
