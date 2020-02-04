@@ -3,7 +3,7 @@
 <section class="showpet">
 <img src=<%= @pet.url %> alt="<%= @pet.name %>" height="300" width="300" class="pet" >
 
-<table>
+<table class="pet">
   <tr>
     <th>Date of Birth</th>
     <th>Species</th>
@@ -15,7 +15,7 @@
     <th>Delete?</th>
   </tr>
   <tr>
-    <td><%= @pet.dob %></td>
+    <td><%= Date.parse(@pet.dob).strftime('%a %d %b %Y') %></td>
     <td><%= @pet.species %></td>
     <td><a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></td>
     <td><%= @pet.find_vet.name %></td>

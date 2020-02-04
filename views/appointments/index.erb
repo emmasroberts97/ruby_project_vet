@@ -4,7 +4,7 @@
   <input type="submit" value="Add Appointment"/>
 </form>
 
-<table>
+<table class="appointment">
   <tr>
     <th>Check In</th>
     <th>Check Out</th>
@@ -15,8 +15,8 @@
   </tr>
   <% for appointment in @appointments %>
   <tr>
-    <td><%= Date.parse(appointment.check_in) %></td>
-    <td><%= Date.parse(appointment.check_out) %></td>
+    <td><%= Date.parse(appointment.check_in).strftime('%a %d %b %Y') %></td>
+    <td><%= Date.parse(appointment.check_out).strftime('%a %d %b %Y') %></td>
     <td><%= appointment.find_pet.name %></td>
     <td><%= Appointment.sample_treatment() %></td>
     <td>
