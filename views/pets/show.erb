@@ -7,6 +7,7 @@
 <h3 class="petdetails"> Species: <%= @pet.species %> </h3>
 <h3 class="petdetails"> Owner: <a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></h3>
 <h3 class="petdetails"> Vet: <%= @pet.find_vet.name %> </h3>
+<h3 class="petdetails"> Next Appointment: <%= Date.parse(@pet.find_pet_appointment.check_in).strftime('%a %d %b %Y')  %> </h3>
 <h3 class="petdetails"> Treatment Notes: <%= @pet.treatment_notes %> </h3>
 
 <form method="post" action="/pets/<%= @pet.id %>/delete">

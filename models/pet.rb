@@ -70,4 +70,11 @@ class Pet
     return Pet.new(results.first)
   end
 
+  def find_pet_appointment()
+    sql = "SELECT * FROM appointments WHERE pet_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Appointment.new(results.first)
+  end 
+
 end
