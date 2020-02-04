@@ -74,7 +74,11 @@ class Pet
     sql = "SELECT * FROM appointments WHERE pet_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return Appointment.new(results.first)
-  end 
+    if results.first != nil
+      return Appointment.new(results.first)
+    else
+      return nil
+    end 
+  end
 
 end

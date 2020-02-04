@@ -1,6 +1,6 @@
 <h2> <%= @pet.name %> </h2>
 
-<section class="showpet">
+<section>
 <img src=<%= @pet.url %> alt="<%= @pet.name %>" height="300" width="300" class="pet" >
 
 <table class="pet">
@@ -19,7 +19,11 @@
     <td><%= @pet.species %></td>
     <td><a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></td>
     <td><%= @pet.find_vet.name %></td>
+    <% if @pet.find_pet_appointment != nil %>
     <td><%= Date.parse(@pet.find_pet_appointment.check_in).strftime('%a %d %b %Y') %></td>
+    <% else %>
+    <td> No Appointment Scheduled! </td>
+    <% end %>
     <td><%= @pet.treatment_notes %></td>
     <td><form method="get" action="/pets/<%= @pet.id %>/edit">
       <input class="btn" type="submit" value="Edit Pet" />

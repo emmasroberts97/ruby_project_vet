@@ -1,11 +1,18 @@
 <h2> Creature Comforts Veterinary Practice Vets </h2>
 
+<form method="get" action="/vets/new">
+  <input type="submit" value="Add Vet"/>
+</form>
+
+
+
 <% for vet in @vets %>
+<section class="vetbox">
 <h3 class="vet"> <%= vet.name %> </h3>
 
    <form method="get" action="/vets/<%= vet.id %>">
      <input class="vetbtn" type="submit" value="Select Vet"/>
    </form>
  <br>
- <hr />
+ </section>
 <% end %>

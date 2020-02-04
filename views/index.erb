@@ -21,17 +21,17 @@
 
 <section class="appointments" >
 <h2> Pets in the Practice Today: </h2>
-</section>
 <ul class="practice">
 <% for appointment in @appointments %>
 <% time = Date.today %>
 <% check_out = appointment.check_out %>
 <% check_in = appointment.check_in %>
   <% if time.between?(Date.parse(check_in), Date.parse(check_out))  %>
-  <li><%= appointment.find_pet.name %></li>
+  <li class="practicepet"><%= appointment.find_pet.name %></li>
   <% end %>
 <% end %>
 </ul>
+</section>
 
 <form method="get" action="/appointments">
   <input type="submit" value="View Appointments"/>

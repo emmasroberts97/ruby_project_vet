@@ -4,7 +4,6 @@ h2.pets {
   justify-content: center;
 }
 
-
 form.vetbutton {
   display: flex;
   flex-direction: row;
@@ -31,46 +30,23 @@ img.showowner {
   margin-right: auto;
 }
 
-td, th {
-  text-align: center;
+img.vet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-td {
-  padding: 20px 50px 10px 40px;
-  border-bottom: 1px solid black;
-}
-
-th {
-  padding: 20px 20px 10px 0px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-table {
-  border-collapse: collapse;
-  margin-left:auto;
-  margin-right:auto;
-  width: 50%;
+section.vetbox {
   background-color: white;
-  margin-top: 10px;
-}
-
-table.appointment{
-  width: 75%;
+  opacity: 80%;
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h3.vet {
   display: flex;
   justify-content: center;
   padding-top: 40px;
-}
-
-hr {
-  width: 15%;
-}
-
-img.vet {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
