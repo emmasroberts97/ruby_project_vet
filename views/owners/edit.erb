@@ -13,6 +13,9 @@
       <option <%= "selected" if @owner.registration == "Not Registered" %> value = "Not Registered" > Not Registered </option>
     </select>
 
+    <label for="url">Picture:</label>
+    <input id="url" type="text" name="url" value = "<%= @owner.url %>" />
+
     <input class="submit-button" type='submit' value="Update Owner"/>
 
 </form>
