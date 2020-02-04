@@ -1,7 +1,13 @@
 <h2> <%= @pet.name %> </h2>
 
 <section>
+
+<% if @pet.url != nil %>
 <img src=<%= @pet.url %> alt="<%= @pet.name %>" height="300" width="300" class="pet" >
+<% else %>
+<img src="/images/missing-image.png" alt="Missing Image" height="300" width="300" class="pet" >
+<% end %>
+
 
 <table class="pet">
   <tr>
@@ -15,7 +21,7 @@
     <th>Delete?</th>
   </tr>
   <tr>
-    <td><%= Date.parse(@pet.dob).strftime('%a %d %b %Y') %></td>
+    <td> <%= Date.parse(@pet.dob).strftime('%a %d %b %Y') %> </td>
     <td><%= @pet.species %></td>
     <td><a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></td>
     <td><%= @pet.find_vet.name %></td>

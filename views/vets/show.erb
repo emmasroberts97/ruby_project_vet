@@ -1,6 +1,10 @@
 <h2> <%= @vet.name %> </h2>
 
+<% if @vet.url != nil %>
 <img class="vet" src=<%= @vet.url %> alt="<%= @vet.name %>" width="300" height="300" >
+<% else %>
+<img src="/images/missing-image.png" alt="Missing Image" height="300" width="300" class="vet" >
+<% end %>
 
 <table class="vet">
   <tr>

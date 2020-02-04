@@ -5,7 +5,11 @@
 
 <h2> Name: <%= @owner.name %> </h2>
 
+<% if @owner.url != nil %>
 <img src=<%= @owner.url %> alt="<%= @owner.name %>" height="300" width="300" class="showowner" />
+<% else %>
+<img src="/images/missing-image.png" alt="Missing Image" height="300" width="300" class="showowner" >
+<% end %>
 
 <table class="owner">
   <tr>

@@ -78,7 +78,20 @@ class Pet
       return Appointment.new(results.first)
     else
       return nil
-    end 
+    end
   end
+
+
+# decided to keep date of birth
+  # def get_age
+  #   age = Date.today.year - Date.parse(@dob).year
+  #   month = Date.today.month - Date.parse(@dob).month
+  #   if age >= 1
+  #     return "#{age} year(s) old"
+  #   elsif age < 1
+  #     return "#{month} month(s) old"
+  #   end
+  # end
+
 
 end
