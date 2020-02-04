@@ -1,0 +1,18 @@
+<form class="create" action="/appointments/<%= @appointment.id %>" method="post">
+
+    <label for="check_in">Check In:</label>
+    <input id="check_in" type="date" name="check_in" value= "<%= Date.parse(@appointment.check_in) %>" />
+
+    <label for="check_out">Check Out:</label>
+    <input id="check_out" type="date" name="check_out" value= "<%= Date.parse(@appointment.check_out) %>" />
+
+    <label for="pet_id">Select a Pet:</label>
+    <select id="pet_id" name="pet_id">
+      <% for pet in @pets %>
+        <option <%= "selected" if @appointment.pet_id == pet.id %> value ="<%= pet.id %>" > <%= pet.name %> </option>
+      <% end %>
+    </select>
+
+    <input class="submit-button" type='submit' value="Update Appointment"/>
+
+</form>

@@ -1,16 +1,34 @@
 <h2 class="appointments"> Appointments </h2>
 
+<form method="get" action="/appointments/new">
+  <input type="submit" value="Add Appointment"/>
+</form>
+
 <table>
   <tr>
     <th>Check In</th>
     <th>Check Out</th>
     <th>Pet</th>
+    <th>Treatment</th>
+    <th>Edit?</th>
+    <th>Delete?</th>
   </tr>
   <% for appointment in @appointments %>
   <tr>
     <td><%= Date.parse(appointment.check_in) %></td>
     <td><%= Date.parse(appointment.check_out) %></td>
     <td><%= appointment.find_pet.name %></td>
+    <td><%= Appointment.sample_treatment() %></td>
+    <td>
+    <form method="get" action="/appointments/<%= appointment.id %>/edit">
+    <input class="btn" type="submit" value="Edit" />
+    </form>
+    </td>
+    <td>
+    <form method="post" action="/appointments/<%= appointment.id %>/delete">
+    <input class="btn" type="submit" value="Delete"/>
+    </form>
+    </td>
   </tr>
   <% end %>
 </table>

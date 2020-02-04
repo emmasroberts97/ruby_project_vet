@@ -31,7 +31,7 @@ CREATE TABLE pets(
 
 CREATE TABLE appointments(
   id SERIAL PRIMARY KEY,
-  check_in TIMESTAMP,
-  check_out TIMESTAMP,
+  check_in DATE,
+  check_out DATE,
   pet_id INT REFERENCES pets(id) ON DELETE CASCADE
 );

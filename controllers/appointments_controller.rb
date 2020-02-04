@@ -14,10 +14,28 @@ end
 post '/appointments' do
   @appointment = Appointment.new(params)
   @appointment.save()
-  redirect to('/pets')
+  redirect to('/appointments')
 end
 
 get '/appointments' do
   @appointments = Appointment.all()
   erb(:"appointments/index")
+end
+
+get '/appointments/:id/edit' do
+  @pets = Pet.all()
+  @appointment = Appointment.find(params[:id])
+  erb(:"appointments/edit")
+end
+
+post '/appointments/:id' do
+  @appointment = Appointment.new(params)
+  @appointment.update()
+  redirect to('/appointments')
+end
+
+post '/appointments/:id/delete' do
+  @appointment = Appointment.find(params[:id])
+  @appointment.delete()
+  redirect to('/appointments')
 end

@@ -9,7 +9,7 @@ class Appointment
     @id = options['id'].to_i if options['id']
     @check_in = options['check_in']
     @check_out = options['check_out']
-    @pet_id = options['pet_id']
+    @pet_id = options['pet_id'].to_i
   end
 
   def save()
@@ -27,8 +27,15 @@ class Appointment
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM appointments WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Appointment.new(results.first)
+  end
+
   def self.all()
-    sql = "SELECT * FROM appointments"
+    sql = "SELECT * FROM appointments ORDER BY check_in DESC"
     results = SqlRunner.run(sql)
     return results.map{|appointment| Appointment.new(appointment)}
   end
@@ -38,6 +45,12 @@ class Appointment
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM appointments WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def find_pet()
     sql = "SELECT * FROM pets WHERE id = $1"
     values = [@pet_id]
@@ -45,5 +58,11 @@ class Appointment
     return Pet.new(results.first)
   end
 
+  def self.sample_treatment()
+    array = ["Vaccinations", "Spay/Neuter",
+      "Nails Clipped", "Teeth Cleaned", "Ultrasound",
+      "Annual Check-Up", "Weigh-In"]
+    return array.sample
+  end
 
 end
