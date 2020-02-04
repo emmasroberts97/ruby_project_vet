@@ -44,3 +44,4 @@ Technologies Used:
 5. Pry
 6. PostgreSQL
 7. SQL
+8. MiniTest

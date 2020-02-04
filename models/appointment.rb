@@ -40,8 +40,14 @@ class Appointment
     return results.map{|appointment| Appointment.new(appointment)}
   end
 
+  #This function will delete all data from the appointments table
+  #in the database
   def self.delete_all()
+    #We will use the SQL command "DELETE FROM" to delete all
+    #from the appointments table
     sql = "DELETE FROM appointments"
+    #We will then use the run method in the SqlRunner class to
+    #execute this SQL command
     SqlRunner.run(sql)
   end
 
