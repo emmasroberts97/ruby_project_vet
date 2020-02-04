@@ -16,6 +16,8 @@ h2.viewpets {
 
 body {
   background-image: url('/images/background3.png');
+  font-family: monospace;
+  font-size: 1.25em;
 }
 
 section.appointments{

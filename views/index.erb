@@ -28,7 +28,7 @@
 <% check_out = appointment.check_out %>
 <% check_in = appointment.check_in %>
   <% if time.between?(Date.parse(check_in), Date.parse(check_out))  %>
-  <li> <%= appointment.find_pet.name %> </li>
+  <li><%= appointment.find_pet.name %></li>
   <% end %>
 <% end %>
 </ul>

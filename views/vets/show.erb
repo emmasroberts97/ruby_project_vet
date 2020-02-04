@@ -2,20 +2,26 @@
 
 <img class="vet" src=<%= @vet.url %> alt="<%= @vet.name %>" width="300" height="300" >
 
-<h2> <%= @vet.experience %> years of experience </h2>
-
-<h2> Pets:
-  <ul>
-    <% for pet in @vet.find_patients %>
-    <li class="vetpets'"> <%= pet.name %> </li>
-   <% end %>
-   </ul>
-   </h2>
-
-<form method="post" action="/vets/<%= @vet.id %>/delete" class="vetbutton">
-  <input type="submit" value="Delete Vet"/>
-</form>
-
-<form method="get" action="/vets/<%= @vet.id %>/edit" class="vetbutton">
-  <input type="submit" value="Edit Vet" />
-</form>
+<table>
+  <tr>
+    <th>Years of Experience</th>
+    <th>Pets</th>
+    <th>Edit?</th>
+    <th>Delete?</th>
+  </tr>
+  <tr>
+    <td><%= @vet.experience %></td>
+    <td>
+      <% for pet in @vet.find_patients %>
+      <li class="vetpets'"> <%= pet.name %> </li>
+     <% end %>
+   </td>
+    <td><form method="get" action="/vets/<%= @vet.id %>/edit" class="vetbutton">
+      <input class ="btn" type="submit" value="Edit Vet" />
+    </form></td>
+    <td><form method="post" action="/vets/<%= @vet.id %>/delete" class="vetbutton">
+      <input class="btn" type="submit" value="Delete Vet"/>
+    </form>
+  </td>
+  </tr>
+</table>

@@ -7,14 +7,22 @@
 
 <img src=<%= @owner.url %> alt="<%= @owner.name %>" height="300" width="300" class="showowner">
 
-
-<h2> Contact Number: <%= @owner.contact_number %> </h2>
-<h2> Registration Status: <%= @owner.registration %> </h2>
-
-<form method="post" action="/owners/<%= @owner.id %>/delete">
-  <input type="submit" value="Delete Owner"/>
-</form>
-
-<form method="get" action="/owners/<%= @owner.id %>/edit">
-  <input type="submit" value="Edit Owner" />
-</form>
+<table>
+  <tr>
+    <th>Contact Number</th>
+    <th>Registration Status</th>
+    <th>Edit?</th>
+    <th>Delete?</th>
+  </tr>
+  <tr>
+    <td><%= @owner.contact_number %></td>
+    <td> <%= @owner.registration %> </td>
+    <td><form method="get" action="/owners/<%= @owner.id %>/edit">
+      <input class ="btn" type="submit" value="Edit Owner" />
+    </form></td>
+    <td><form method="post" action="/owners/<%= @owner.id %>/delete">
+      <input class="btn" type="submit" value="Delete Owner"/>
+    </form>
+  </td>
+  </tr>
+</table>

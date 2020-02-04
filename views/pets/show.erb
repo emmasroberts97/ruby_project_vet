@@ -3,19 +3,32 @@
 <section class="showpet">
 <img src=<%= @pet.url %> alt="<%= @pet.name %>" height="300" width="300" class="pet" >
 
-<h3 class="petdetails"> Date Of Birth: <%= @pet.dob %> </h3>
-<h3 class="petdetails"> Species: <%= @pet.species %> </h3>
-<h3 class="petdetails"> Owner: <a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></h3>
-<h3 class="petdetails"> Vet: <%= @pet.find_vet.name %> </h3>
-<h3 class="petdetails"> Next Appointment: <%= Date.parse(@pet.find_pet_appointment.check_in).strftime('%a %d %b %Y')  %> </h3>
-<h3 class="petdetails"> Treatment Notes: <%= @pet.treatment_notes %> </h3>
-
-<form method="post" action="/pets/<%= @pet.id %>/delete">
-  <input type="submit" value="Delete Pet"/>
-</form>
-
-<form method="get" action="/pets/<%= @pet.id %>/edit">
-  <input type="submit" value="Edit Pet" />
-</form>
+<table>
+  <tr>
+    <th>Date of Birth</th>
+    <th>Species</th>
+    <th>Owner</th>
+    <th>Vet</th>
+    <th>Next Appointment</th>
+    <th>Treatment Notes</th>
+    <th>Edit?</th>
+    <th>Delete?</th>
+  </tr>
+  <tr>
+    <td><%= @pet.dob %></td>
+    <td><%= @pet.species %></td>
+    <td><a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></td>
+    <td><%= @pet.find_vet.name %></td>
+    <td><%= Date.parse(@pet.find_pet_appointment.check_in).strftime('%a %d %b %Y') %></td>
+    <td><%= @pet.treatment_notes %></td>
+    <td><form method="get" action="/pets/<%= @pet.id %>/edit">
+      <input class="btn" type="submit" value="Edit Pet" />
+    </form></td>
+    <td><form method="post" action="/pets/<%= @pet.id %>/delete">
+      <input class="btn" type="submit" value="Delete Pet"/>
+    </form>
+  </td>
+  </tr>
+</table>
 
 </section>
