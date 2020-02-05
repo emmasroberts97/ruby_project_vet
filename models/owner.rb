@@ -60,5 +60,11 @@ class Owner
     return Owner.new(results.first)
   end
 
+  def self.find_pets_registration(registration)
+    sql = "SELECT pets.* FROM pets INNER JOIN owners ON pets.owner_details = owners.id WHERE registration = $1"
+    values = [registration]
+    results = SqlRunner.run(sql, values)
+    return results.map{|pet| Pet.new(pet)}
+  end
 
 end

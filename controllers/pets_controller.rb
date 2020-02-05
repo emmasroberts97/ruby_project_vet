@@ -25,6 +25,16 @@ post '/pets' do
   redirect to('/pets')
 end
 
+get '/pets/registration' do
+  @pets = Owner.find_pets_registration(params['registration'])
+  erb(:"pets/registration")
+end
+
+post '/pets/registration' do
+  @pets = Owner.find_pets_registration(params['registration'])
+  erb(:"pets/registration")
+end
+
 get '/pets/:id' do
   @pet = Pet.find(params[:id])
   erb(:"pets/show")

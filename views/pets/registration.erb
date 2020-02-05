@@ -1,17 +1,7 @@
 <h2 class="pets"> Creature Comforts' Pets </h2>
 
-<form class="filterpet" action="/pets/registration" method="post">
-
-
-    <label for="registration"></label>
-    <select id="registration" name="registration">
-      <option value="All">All</option>
-      <option value="Registered">Registered</option>
-      <option value="Not Registered">Not Registered</option>
-    </select>
-
-    <input class="submit-button" type='submit' value="Filter Pets"/>
-
+<form method="get" action="/pets">
+  <input class="petbtn" type="submit" value="All Pets"/>
 </form>
 
 <form method="get" action="/pets/new">
