@@ -29,6 +29,7 @@ The practice wants to be able to register / track animals. Important information
   CRUD actions for vets / animals - remember the user - what would they want to see on each View? What Views should there be?
 
 Possible Extensions
+
   Mark owners as being registered/unregistered with the Vet. unregistered owners won’t be able to add any more animals.
 
   If an owner has multiple animals we don’t want to keep updating contact details separately for each pet. Extend your application to reflect that an owner can have many pets and to more sensibly keep track of owners’ details (avoiding repetition / inconsistencies)
