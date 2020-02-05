@@ -28,7 +28,11 @@
   <% for pet in @pets %>
   <tr>
     <td><%= pet.name %></td>
-    <td><%= pet.find_vet().name %></td>
+    <% if pet.vet_details != 0 %>
+     <td><%= pet.find_vet().name %></td>
+    <% else %>
+      <td> No Vet </td>
+    <% end %>
     <td><%= pet.species %></td>
     <td><a href="/pets/<%= pet.id %>">View Pet</a></td>
   </tr>

@@ -57,6 +57,9 @@ class Pet
   end
 
   def find_vet()
+    if @vet_details == 0
+      return Vet.new({"name" => "nil", "experience" => "nil", "url" => "nil"})
+    end
     sql = "SELECT * FROM vets WHERE id = $1"
     values = [@vet_details]
     results = SqlRunner.run(sql, values)

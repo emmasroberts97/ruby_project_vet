@@ -7,9 +7,9 @@ class Vet
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
-    @experience = options['experience'].to_i
-    @url = options['url']
+    @name = options['name'] if options['name']
+    @experience = options['experience'].to_i if options['experience']
+    @url = options['url'] if options['url']
   end
 
   def save()

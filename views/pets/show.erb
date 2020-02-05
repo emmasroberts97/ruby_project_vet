@@ -24,7 +24,11 @@
     <td> <%= Date.parse(@pet.dob).strftime('%a %d %b %Y') %> </td>
     <td><%= @pet.species %></td>
     <td><a href="/owners/<%= @pet.find_owner.id %>"><%= @pet.find_owner.name %> </a></td>
-    <td><%= @pet.find_vet.name %></td>
+    <% if @pet.vet_details != 0 %>
+     <td><%= @pet.find_vet().name %></td>
+    <% else %>
+      <td> No Vet </td>
+    <% end %>
     <% if @pet.find_pet_appointment != nil %>
     <td><%= Date.parse(@pet.find_pet_appointment.check_in).strftime('%a %d %b %Y') %></td>
     <% else %>
