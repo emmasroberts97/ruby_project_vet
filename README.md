@@ -2,9 +2,12 @@ Vet Management App:
 
 To Run the Application:
 
-1. Run the vet_app.rb file
-2. Navigate through the different pages
-3. All files for the project are shown in the relevant folders (models, views, public, etc.)
+1. Add a database called 'vet'
+2. Run the command 'psql -d vet -f db/vet.sql' 
+3. Run the the db/seeds.rb file 
+4. Run the vet_app.rb controller
+5. Navigate through the different pages
+6. All files for the project are shown in the relevant folders (models, views, public, etc.)
 
 
 The Brief:
